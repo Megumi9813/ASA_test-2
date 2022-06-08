@@ -220,8 +220,8 @@ header .header_dropDown .dropDown_sub li a {
   top: 48px;
   left: 0;
   right: 0;
-  background-color: #fff;
   padding: 40px;
+  color: #fff;
 }
 
 .header_subNav02.selected {
@@ -230,6 +230,7 @@ header .header_dropDown .dropDown_sub li a {
 
 .header_subNav02 li a {
   display: block;
+  color: #fff;
 }
 
 #home_first {
