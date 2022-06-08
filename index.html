@@ -14,49 +14,126 @@
       crossorigin="anonymous"
     ></script>
     <script src="./index.js"></script>
+    <script
+      type="text/javascript"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"
+    ></script>
+
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <title>ASA Vancouver test</title>
   </head>
   <body>
     <header>
-      <div class="header_wrapper">
+      <div class="header_top">
         <div class="header_logo">
           <a href="#">
             <img src="./img/ASA-Final-01.png" />
           </a>
         </div>
-        <nav class="header_nav">
-          <div class="header_nav01">
-            <ul>
-              <li>HOME</li>
-              <li>PROGRAMS</li>
-              <li>THE TEAM</li>
-              <li>TESTIMONIALS</li>
-              <li>BLOG</li>
-            </ul>
+        <ul class="header_nav01">
+          <li><i class="fa-solid fa-calendar-check"></i>Book Now</li>
+          <li><i class="fa-solid fa-book-open"></i>Brochure</li>
+          <li><i class="fa-solid fa-paper-plane"></i>Conatct Us</li>
+        </ul>
+        <div class="mobile_btn-container" onclick="openMenu()">
+          <span class="btn-line"></span>
+          <span class="btn-line"></span>
+          <span class="btn-line"></span>
+          <span>MENU</span>
+        </div>
+      </div>
+      <div class="header_bottom">
+        <ul class="header_nav02">
+          <li>
+            <a href="">PROGRAMS</a>
+          </li>
+          <li>
+            <a href="">THE TEAM</a>
+          </li>
+          <li>
+            <a href="">TESTIMONIALS</a>
+          </li>
+          <li>
+            <a href="">BLOG</a>
+          </li>
+          <li>
+            <a href="">NEWS LETTER</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
+        <ul class="header_subNav02 program_sub">
+          <li><a href="">Program01</a></li>
+          <li><a href="">Program02</a></li>
+          <li><a href="">Program03</a></li>
+          <li><a href="">Program04</a></li>
+        </ul>
+        <ul class="header_subNav02 team_sub">
+          <li>Team01</li>
+          <li>Team02</li>
+          <li>Team03</li>
+          <li>Team04</li>
+        </ul>
+        <ul class="header_subNav02 testimonials_sub">
+          <li>Testimonial01</li>
+          <li>Testimonial02</li>
+          <li>Testimonial03</li>
+          <li>Testimonial04</li>
+        </ul>
+        <ul class="header_subNav02 blog_sub">
+          <li>Blog01</li>
+          <li>Blog02</li>
+          <li>Blog03</li>
+          <li>Blog04</li>
+        </ul>
+        <ul class="header_subNav02 news_sub">
+          <li>News Letter01</li>
+          <li>News Letter02</li>
+          <li>News Letter03</li>
+          <li>News Letter04</li>
+        </ul>
+        <ul class="header_subNav02 faq_sub">
+          <li>FAQ01</li>
+          <li>FAQ02</li>
+          <li>FAQ03</li>
+          <li>FAQ04</li>
+        </ul>
+      </div>
+      <div class="header_dropDown">
+        <div class="dropDown_main-container">
+          <div class="btn_close-container">
+            <div class="btn_close" onclick="closeMenu()">
+              <i class="fa-solid fa-xmark"></i>
+            </div>
           </div>
-          <div class="header_nav02">
-            <ul>
-              <li>
-                <a href="" class="first">BOOK</a>
-              </li>
-              <li>
-                <a href="" class="third">BROCHURE</a>
-              </li>
-              <li>
-                <a href="" class="forth">COMPANY</a>
-              </li>
-              <li><a href="" class="second">CONTACT</a></li>
-            </ul>
-          </div>
-          <div class="header_nav-btn">
-            <button>
-              <div class="btn_icon"><i class="fa-solid fa-bars"></i></div>
-              <p>MENU</p>
-            </button>
-          </div>
-        </nav>
+          <ul class="dropDown_main">
+            <li><i class="fa-solid fa-calendar-check"></i>Book Now</li>
+            <li><i class="fa-solid fa-book-open"></i>Brochure</li>
+            <li><i class="fa-solid fa-paper-plane"></i>Conatct Us</li>
+          </ul>
+        </div>
+        <ul class="dropDown_sub">
+          <li>
+            <a href="">PROGRAMS</a>
+          </li>
+          <li>
+            <a href="">THE TEAM</a>
+          </li>
+          <li>
+            <a href="">TESTIMONIALS</a>
+          </li>
+          <li>
+            <a href="">BLOG</a>
+          </li>
+          <li>
+            <a href="">NEWS LETTER</a>
+          </li>
+          <li>
+            <a href="">FAQ</a>
+          </li>
+        </ul>
       </div>
     </header>
     <section id="home_first">
@@ -354,6 +431,63 @@
     </footer>
     <script>
       AOS.init();
+    </script>
+    <script>
+      $(function () {
+        $(".header_bottom").hover(
+          function () {
+            $(this).addClass("hovered");
+          },
+          function () {
+            $(this).removeClass("hovered");
+            $(this).find(".header_nav02 li").removeClass("selected");
+            $(this).find(".header_subNav02").removeClass("selected");
+          }
+        );
+
+        $(".header_bottom .header_nav02 li").hover(
+          function () {
+            var ttl = $(this).children("a").text();
+            $(this).addClass("selected");
+            $(this).siblings().removeClass("selected");
+
+            var current;
+            switch (ttl) {
+              case "PROGRAMS":
+                current = $(".header_bottom .header_subNav02.program_sub");
+                $(current).addClass("selected");
+                break;
+              case "THE TEAM":
+                current = $(".header_bottom .header_subNav02.team_sub");
+                $(current).addClass("selected");
+                break;
+              case "TESTIMONIALS":
+                current = $(".header_bottom .header_subNav02.testimonials_sub");
+                $(current).addClass("selected");
+                break;
+              case "BLOG":
+                current = $(".header_bottom .header_subNav02.blog_sub");
+                $(current).addClass("selected");
+                break;
+              case "NEWS LETTER":
+                current = $(".header_bottom .header_subNav02.news_sub");
+                $(current).addClass("selected");
+                break;
+              case "FAQ":
+                current = $(".header_bottom .header_subNav02.faq_sub");
+                $(current).addClass("selected");
+                break;
+              default:
+                current = $(".header_bottom .header_subNav02");
+                break;
+            }
+            $(current).siblings().removeClass("selected");
+          },
+          function () {
+            //マウスカーソルが離れた時の処理
+          }
+        );
+      });
     </script>
   </body>
 </html>
