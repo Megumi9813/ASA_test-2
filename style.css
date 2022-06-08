@@ -75,45 +75,11 @@ header .header_top .header_nav01 li:hover {
 header .header_top .mobile_btn-container {
   cursor: pointer;
   display: none;
-  position: relative;
-  width: 54px;
-  height: 54px;
-  margin-left: auto;
-  background-color: #c49275;
-  text-align: center;
-  border-radius: 6px;
 }
 
-header .header_top .mobile_btn-container .btn-line {
-  position: absolute;
-  width: 30px;
-  height: 2px;
-  background-color: #fff;
-  -webkit-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
-header .header_top .mobile_btn-container .btn-line:nth-child(1) {
-  top: 12px;
-}
-
-header .header_top .mobile_btn-container .btn-line:nth-child(2) {
-  top: 18px;
-}
-
-header .header_top .mobile_btn-container .btn-line:nth-child(3) {
-  top: 24px;
-}
-
-header .header_top .mobile_btn-container span {
-  position: absolute;
-  bottom: 6px;
-  left: 50%;
-  display: inline-block;
-  -webkit-transform: translateX(-50%);
-          transform: translateX(-50%);
-  font-size: 12px;
-  color: #fff;
+header .header_top .mobile_btn-container i {
+  color: #c49275;
+  font-size: 30px;
 }
 
 header .header_bottom {
@@ -189,11 +155,8 @@ header .header_dropDown .dropDown_main-container .btn_close-container {
 header .header_dropDown .dropDown_main-container .btn_close-container .btn_close {
   position: relative;
   cursor: pointer;
-  width: 54px;
-  height: 54px;
-  background-color: #c49275;
-  text-align: center;
-  border-radius: 6px;
+  width: 30px;
+  height: 30px;
 }
 
 header .header_dropDown .dropDown_main-container .btn_close-container .btn_close i {
@@ -203,7 +166,7 @@ header .header_dropDown .dropDown_main-container .btn_close-container .btn_close
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  color: #fff;
+  color: #c49275;
 }
 
 header .header_dropDown .dropDown_main-container .dropDown_main {
@@ -1557,8 +1520,18 @@ a {
     width: 100%;
     margin-bottom: 10px;
   }
+  header .header_top {
+    height: 75px;
+    padding: 0 10px;
+  }
+  header .header_top .header_logo {
+    width: 150px;
+  }
+  header .header_dropDown .dropDown_main-container .btn_close-container {
+    height: 75px;
+  }
   header .header_dropDown .dropDown_main-container {
-    padding: 0 30px;
+    padding: 0 10px 15px 10px;
   }
 }
 /*# sourceMappingURL=style.css.map */
